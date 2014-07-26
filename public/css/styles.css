@@ -1,0 +1,127 @@
+@import url(http://fonts.googleapis.com/css?family=Francois+One);
+body,
+html {
+  background-color: #000;
+  font-family: 'Francois One', sans-serif;
+  color: #FFF;
+}
+.row {
+  padding-bottom: 20px;
+}
+.info {
+  text-align: center;
+  font-size: 80px;
+  padding: 20px;
+}
+.info .temp {
+  font-size: 85px;
+  color: #000;
+  background: #f4ef55;
+  border-radius: 62px;
+  width: 125px;
+  height: 125px;
+  display: inline-block;
+}
+.info small {
+  font-size: 60px;
+  color: #459ad0;
+}
+.location {
+  margin-bottom: 20px;
+}
+.location h1 {
+  font-size: 40px;
+  line-height: 40px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #000;
+  background: #FFF;
+  padding: 5px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-bottom: 10px solid #000;
+}
+.location .line {
+  border: 5px solid #FFF;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 40px;
+  border-bottom: 0px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.location .line:last-child {
+  border-bottom: 5px solid #FFF;
+}
+.location.next h1 {
+  background: #828282;
+  color: #FFF;
+}
+.location.next .line {
+  border-color: #828282;
+}
+.location.next .line .box {
+  width: 90px;
+  height: 30px;
+  display: inline-block;
+}
+.location.next .line span {
+  font-style: italic;
+  font-size: 20px;
+}
+.location.next .line.hovedscene .box {
+  background: #B80000;
+}
+.location.next .line.torget .box {
+  background: #41ad49;
+}
+.location.next .line.kode .box {
+  background: #459ad0;
+}
+.location.hovedscenen h1 {
+  background: #B80000;
+  color: #FFF;
+}
+.location.hovedscenen .line {
+  border-color: #B80000;
+}
+.location.hovedscenen .line.current {
+  background: #B80000;
+  color: #FFF;
+}
+.location.torget h1 {
+  background: #41ad49;
+  color: #FFF;
+}
+.location.torget .line {
+  border-color: #41ad49;
+  font-size: 30px;
+}
+.location.torget .line.current {
+  background: #41ad49;
+  color: #FFF;
+}
+.location.kode h1 {
+  background: #459ad0;
+  color: #FFF;
+}
+.location.kode .line {
+  border-color: #459ad0;
+  font-size: 30px;
+}
+.location.kode .line.current {
+  background: #459ad0;
+  color: #FFF;
+}
+.blink {
+  color: #FFF !important;
+  background: #000 !important;
+}
+.large-text {
+  font-size: 120px;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}

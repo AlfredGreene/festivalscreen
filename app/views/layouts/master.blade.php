@@ -10,18 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet/less" type="text/css" href="/css/styles.less" />
-        <script>
-		  less = {
-		    env: "development",
-		    async: true,
-		    fileAsync: true,
-		    poll: 1000,
-		    functions: {},
-		    dumpLineNumbers: "comments",
-		    relativeUrls: false
-		  };
-		</script>
+        <link href="/css/styles.css" rel="stylesheet">
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
         <script src="js/jquery.textfill.js" type="text/javascript"></script>
