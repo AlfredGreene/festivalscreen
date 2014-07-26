@@ -12,5 +12,6 @@
 */
 
 Route::any('/', 'CalendarController@index');
+Route::any('/other', 'CalendarController@other_stages');
 Route::get('/auth', 'CalendarController@authenticate');
 Route::get('/oauth2callback', 'CalendarController@oauth2callback');

@@ -2,29 +2,77 @@
 
 class CalendarController extends \BaseController {
 
-
-	public function index()
+	public function other_stages()
 	{
-		if (!Cache::has('google_accessToken')){
-			App::abort(404, 'Missing Google AccessToken.');
-		}
-
 		$client = new Google_Client();
-		$client->setClientId(Config::get('app.google.ClientId'));
-		$client->setClientSecret(Config::get('app.google.ClientSecret'));
-		$client->setRedirectUri(Config::get('app.google.RedirectUri'));
-		$client->setAccessToken(Cache::get('google_accessToken'));
-
 		if (!Cache::has('google_calendarId')){
+			if (!Cache::has('google_accessToken')){
+				App::abort(404, 'Missing Google AccessToken.');
+			}
+
+			$client->setClientId(Config::get('app.google.ClientId'));
+			$client->setClientSecret(Config::get('app.google.ClientSecret'));
+			$client->setRedirectUri(Config::get('app.google.RedirectUri'));
+			$client->setAccessToken(Cache::get('google_accessToken'));
+			$client->setAccessType('offline');
+
 			if(Input::get('calendarId')) {
+
 				Cache::put('google_calendarId', Input::get('calendarId'), 20140);
+
 			} else {
+
 				$calendar = new Google_Service_Calendar($client);
 				$list = $calendar->calendarList->listCalendarList();
 				return View::make('select_calendar')->with("list", $list->items);
+
 			}
 		}
 
+		$client->setDeveloperKey(Config::get('app.google.ApiKey'));
+		$calendar = new Google_Service_Calendar($client);
+		$feed = $calendar->events->listEvents(Cache::get('google_calendarId'), array('orderBy' => 'startTime', 'singleEvents' => true));
+		$next_feed = $calendar->events->listEvents(Cache::get('google_calendarId'), array('orderBy' => 'startTime', 'singleEvents' => true, 'timeMin' => date("c"), 'maxResults' => 5));
+		$locations = array();
+		foreach($feed->items as $event){
+			$locations[$event->location][] = $event;
+		}
+
+		foreach($locations as $id => $events){
+			asort($locations[$id]);
+		}
+
+		return View::make('other_stages')->with("locations", $locations)->with("items", $next_feed->items);
+	}
+
+	public function index()
+	{
+		$client = new Google_Client();
+		if (!Cache::has('google_calendarId')){
+			if (!Cache::has('google_accessToken')){
+				App::abort(404, 'Missing Google AccessToken.');
+			}
+
+			$client->setClientId(Config::get('app.google.ClientId'));
+			$client->setClientSecret(Config::get('app.google.ClientSecret'));
+			$client->setRedirectUri(Config::get('app.google.RedirectUri'));
+			$client->setAccessToken(Cache::get('google_accessToken'));
+			$client->setAccessType('offline');
+
+			if(Input::get('calendarId')) {
+
+				Cache::put('google_calendarId', Input::get('calendarId'), 20140);
+
+			} else {
+
+				$calendar = new Google_Service_Calendar($client);
+				$list = $calendar->calendarList->listCalendarList();
+				return View::make('select_calendar')->with("list", $list->items);
+
+			}
+		}
+
+		$client->setDeveloperKey(Config::get('app.google.ApiKey'));
 		$calendar = new Google_Service_Calendar($client);
 		$feed = $calendar->events->listEvents(Cache::get('google_calendarId'), array('orderBy' => 'startTime', 'singleEvents' => true));
 		$next_feed = $calendar->events->listEvents(Cache::get('google_calendarId'), array('orderBy' => 'startTime', 'singleEvents' => true, 'timeMin' => date("c"), 'maxResults' => 5));

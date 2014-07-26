@@ -22,20 +22,6 @@
 				</div>
 				@endforeach
 			</div>
-			<div class="location torget">
-				<h1>TORGSCENEN</h1>
-				@foreach($locations['Festivaltorget'] as $event)
-				<? $datetime = new DateTime($event->start->dateTime);
-				   $endtime = new DateTime($event->end->dateTime);
-				   if($datetime->format('Y-m-d') != date("Y-m-d")) continue;
-				   if($datetime->getTimestamp() < time() && $endtime->getTimestamp() > time()) $class = " current";
-				   else $class = "";
-				?>
-				<div class="line{{ @$class }}">
-				<span>{{ $datetime->format('H:i') }} - {{ $event->summary }}</span>
-				</div>
-				@endforeach
-			</div>
 		</div>
 		<div class="col-lg-6">
 			<div class="location next">
@@ -76,20 +62,6 @@
 					<div class="box"></div>
 					{{ $event->summary }}
 					<span class="om">{{ $remaining }}</span>
-				</div>
-				@endforeach
-			</div>
-			<div class="location kode">
-				<h1>KODESCENEN</h1>
-				@foreach($locations['Kode'] as $event)
-				<? $datetime = new DateTime($event->start->dateTime);
-				   $endtime = new DateTime($event->end->dateTime);
-				   if($datetime->format('Y-m-d') != date("Y-m-d")) continue;
-				   if($datetime->getTimestamp() < time() && $endtime->getTimestamp() > time()) $class = " current";
-				   else $class = "";
-				?>
-				<div class="line{{ @$class }}">
-				<span>{{ $datetime->format('H:i') }} - {{ $event->summary }}</span>
 				</div>
 				@endforeach
 			</div>
