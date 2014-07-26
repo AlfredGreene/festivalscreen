@@ -10,7 +10,8 @@
 			<div class="location hovedscenen">
 				<h1>HOVEDSCENEN</h1>
 				@foreach($locations['Hovedscene'] as $event)
-				<? $datetime = new DateTime($event->start->dateTime);
+				<?
+				   $datetime = new DateTime($event->start->dateTime);
 				   $endtime = new DateTime($event->end->dateTime);
 				   if($datetime->format('Y-m-d') != date("Y-m-d")) continue;
 				   if($datetime->getTimestamp() < time() && $endtime->getTimestamp() > time()) $class = " current";
@@ -30,7 +31,7 @@
 				   if($datetime->getTimestamp() < time() && $endtime->getTimestamp() > time()) $class = " current";
 				   else $class = "";
 				?>
-				<div class="line{{ $class }}">
+				<div class="line{{ @$class }}">
 				<span>{{ $datetime->format('H:i') }} - {{ $event->summary }}</span>
 				</div>
 				@endforeach
@@ -71,7 +72,7 @@
 						$remaining = $interval->format("%i minutter");
 					}
 				?>
-				<div class="line{{ $class }}">
+				<div class="line{{ @$class }}">
 					<div class="box"></div>
 					{{ $event->summary }}
 					<span class="om">{{ $remaining }}</span>
@@ -87,7 +88,7 @@
 				   if($datetime->getTimestamp() < time() && $endtime->getTimestamp() > time()) $class = " current";
 				   else $class = "";
 				?>
-				<div class="line{{ $class }}">
+				<div class="line{{ @$class }}">
 				<span>{{ $datetime->format('H:i') }} - {{ $event->summary }}</span>
 				</div>
 				@endforeach
