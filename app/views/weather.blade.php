@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <? $i=0; ?>
+<br /><br /><br />
 <div class="large-text">
 	Drikk vann!<br />
 </div>
