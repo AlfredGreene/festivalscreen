@@ -52,7 +52,8 @@
 					} elseif($interval->format("%h") > 1){
 						$remaining = $interval->format("%h timer");
 					}
-					if($remaining) $remaining .= " og ";
+					if(isset($remaining)) $remaining .= " og ";
+					else $remaining = "";
 					if ($interval->format("%i") == 1){
 						$remaining .= $interval->format("%i minutt");
 					} elseif($interval->format("%i") > 1){

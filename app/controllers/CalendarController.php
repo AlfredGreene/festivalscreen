@@ -2,6 +2,13 @@
 
 class CalendarController extends \BaseController {
 
+	public function weather()
+	{
+		$yr = Yr\Yr::create("Norge/Østfold/Fredrikstad/Gamlebyen", "/tmp");
+		$forecast = $yr->getCurrentForecast();
+		return View::make('weather')->with("forecast", $forecast);
+	}
+
 	public function other_stages()
 	{
 		$client = new Google_Client();
