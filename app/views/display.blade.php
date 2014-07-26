@@ -46,16 +46,17 @@
 							$class = " kode";
 					break;
 					}
-					$remaining = $interval->format("%h timer og %i minutter");
+					#$remaining = $interval->format("%h timer og %i minutter");
 					if ($interval->format("%h") == 1){
 						$remaining = $interval->format("%h time");
 					} elseif($interval->format("%h") > 1){
 						$remaining = $interval->format("%h timer");
 					}
+					if($remaining) $remaining .= " og ";
 					if ($interval->format("%i") == 1){
-						$remaining = "og ".$interval->format("%i minutt");
+						$remaining .= $interval->format("%i minutt");
 					} elseif($interval->format("%i") > 1){
-						$remaining = $interval->format("%i minutter");
+						$remaining .= $interval->format("%i minutter");
 					}
 				?>
 				<div class="line{{ @$class }}">
