@@ -5,7 +5,7 @@ the attendees of this festival. It runs a PHP script on a central server, or
 on the web, that gives fully HTML5-compatible screen that fills the TVs with
 content provided by the information-crew.
 
-# Under rebuilding!
+### Under rebuilding!
 We're rebuilding this project next year, as this depended on the Screenly-project,
 we would like to make a full package for Raspberry Pis aswell as Android-boards.
 Screenly has a lot of restrictions due to their pro-version. We are slowly moving
@@ -19,7 +19,7 @@ both Raspberry Pi and Android-boards. The information-crew can then upload a
 video to the central file-server, that distributes automaticly to our 8GB SD-cards,
 and plays accordingly.
 
-# Wanna contribute?
+### Wanna contribute?
 If you live in Norway, and want to contribute to Driftsgruppa, we are allways
 looking for nerds that want to find creative ways to put technology where there are
 non. Driftsgruppa is a group of technology-heads that work on charity for festivals
