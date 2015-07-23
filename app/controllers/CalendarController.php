@@ -54,6 +54,11 @@ class CalendarController extends \BaseController {
 
 	public function index()
 	{
+		return View::make('reveal')->with("md5sum", md5_file(app_path().'/views/reveal.blade.php'));
+	}
+
+	public function __index()
+	{
 		$client = new Google_Client();
 		if (!Cache::has('google_calendarId')){
 			if (!Cache::has('google_accessToken')){

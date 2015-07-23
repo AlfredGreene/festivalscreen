@@ -9,6 +9,7 @@
 		<div class="col-lg-6">
 			<div class="location torget">
 				<h1>TORGSCENEN</h1>
+				@if(isset($locations['Festivaltorget']))
 				@foreach($locations['Festivaltorget'] as $event)
 				<? $datetime = new DateTime($event->start->dateTime);
 				   $endtime = new DateTime($event->end->dateTime);
@@ -20,11 +21,13 @@
 				<span>{{ $datetime->format('H:i') }} - {{ $event->summary }}</span>
 				</div>
 				@endforeach
+				@endif
 			</div>
 		</div>
 		<div class="col-lg-6">
 			<div class="location kode">
 				<h1>KODESCENEN</h1>
+				@if(isset($locations['Kode']))
 				@foreach($locations['Kode'] as $event)
 				<? $datetime = new DateTime($event->start->dateTime);
 				   $endtime = new DateTime($event->end->dateTime);
@@ -36,6 +39,7 @@
 				<span>{{ $datetime->format('H:i') }} - {{ $event->summary }}</span>
 				</div>
 				@endforeach
+				@endif
 			</div>
 		</div>
 	</div>

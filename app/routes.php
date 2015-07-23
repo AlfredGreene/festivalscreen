@@ -16,3 +16,5 @@ Route::any('/other', 'CalendarController@other_stages');
 Route::any('/weather', 'CalendarController@weather');
 Route::get('/auth', 'CalendarController@authenticate');
 Route::get('/oauth2callback', 'CalendarController@oauth2callback');
+
+Route::resource('remote', 'RemoteController');

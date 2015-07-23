@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<? $i=0; ?>
+<?php $i=0; $class=""; ?>
 <div class="large-text">
 	Månefestivalen i dag
 </div>
@@ -10,15 +10,15 @@
 			<div class="location hovedscenen">
 				<h1>HOVEDSCENEN</h1>
 				@foreach($locations['Hovedscene'] as $event)
-				<?
+				<?php
 				   $datetime = new DateTime($event->start->dateTime);
 				   $endtime = new DateTime($event->end->dateTime);
 				   if($datetime->format('Y-m-d') != date("Y-m-d")) continue;
 				   if($datetime->getTimestamp() < time() && $endtime->getTimestamp() > time()) $class = " current";
 				   else $class = "";
 				?>
-				<div class="line{{ $class }}">
-				<span>{{ $datetime->format('H:i') }} - {{ $event->summary }}</span>
+				<div class="line{{ isset($class) ? $class : "" }}">
+				<span>{{ isset($datetime) ? $datetime->format('H:i') : "" }} - {{ $event->summary }}</span>
 				</div>
 				@endforeach
 			</div>
@@ -27,7 +27,7 @@
 			<div class="location next">
 				<h1>NESTE</h1>
 				@foreach($items as $event)
-				<?
+				<?php
 					$now = new DateTime();
 					$datetime = new DateTime($event->start->dateTime);
 					$endtime = new DateTime($event->end->dateTime);
@@ -63,7 +63,7 @@
 				<div class="line{{ @$class }}">
 					<div class="box"></div>
 					{{ $event->summary }}
-					<span class="om">{{ $remaining }}</span>
+					<span class="om">{{ isset($remaining) ? $remaining : "" }}</span>
 				</div>
 				@endforeach
 			</div>
