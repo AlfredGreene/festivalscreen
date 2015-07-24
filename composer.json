@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"google/apiclient": "1.0.*@dev",
-		"eigan/yr": "1.0.*@dev"
+		"eigan/yr": "1.0.*@dev",
+		"jenssegers/date": "^3.0"
 	},
 	"autoload": {
 		"classmap": [

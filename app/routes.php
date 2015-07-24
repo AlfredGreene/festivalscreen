@@ -18,3 +18,4 @@ Route::get('/auth', 'CalendarController@authenticate');
 Route::get('/oauth2callback', 'CalendarController@oauth2callback');
 
 Route::resource('remote', 'RemoteController');
+Route::resource('event', 'EventController');

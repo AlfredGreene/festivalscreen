@@ -1,6 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Francois+One);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
 body, html {
-	font-family: 'Francois One', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 @import 'reveal.less';
 
@@ -114,4 +116,92 @@ body, html {
 	padding-top: 20px;
 	margin-bottom: 0px;
 	text-transform: uppercase;
+}
+
+@stageScreen: 'Amatic SC', cursive; 
+
+
+.stage {
+	color: white;
+	h1 {
+		font-family: @stageScreen;
+		font-size: 15em;
+		span {
+			display: inline-block;
+			background: #ffdf20;
+			padding-left: 8px;
+			padding-right: 8px;
+
+			color: black;
+		}
+	}
+	.program h1 {
+		margin-top: -0.4em;
+		margin-bottom: 0.2em;
+		font-size: 8em;
+	}
+	.playlist {
+		width: 49%;
+		float: left;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 3em;
+		font-weight: 700;
+
+		.header {
+			font-size: 1.7em;
+			font-weight: 200;
+			border-bottom: 2px solid #FFFFFF;
+			margin-bottom: 10px;
+			line-height: 0.8em;
+			text-transform: uppercase;
+		}
+		li {
+			list-style: none;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			&.current {
+				background: #ffdf20;
+				color: black;
+				.blink_me;
+			}
+			&> span {
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+.blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 2.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 2.5s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    
+    animation-name: blinker;
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
 }

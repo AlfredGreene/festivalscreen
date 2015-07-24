@@ -55,7 +55,7 @@ $(function(){
         // Number of milliseconds between automatically proceeding to the
         // next slide, disabled when set to 0, this value can be overwritten
         // by using a data-autoslide attribute on your slides
-        autoSlide: 4000,
+        autoSlide: 7000,
 
         // Stop auto-sliding after user input
         autoSlideStoppable: false,
