@@ -52,7 +52,7 @@ return array(
 	|
 	*/
 
-	'locale' => 'nb',
+	'locale' => 'no',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => '',
+	'key' => 'LEmqRwJGMaUQVm1jUX8Yv4mLaLH0KyOo',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -92,10 +92,10 @@ return array(
 	|
 	*/
 	'google' => array(
-		'ClientId' => '',
-		'ClientSecret' => '',
+		'ClientId' => '328174579124-1vf9lv34gcn56qkahg4nb91u3odgks66.apps.googleusercontent.com',
+		'ClientSecret' => 'C7krbqiaPm0H99sGHZGQrVVP',
 		'RedirectUri' => 'http://moonscreen.no:8000/index.php/oauth2callback',
-		'ApiKey' => ''
+		'ApiKey' => 'AIzaSyCY39CvzYXGVQqTHcj7Y3OPuQysdgO3QHg'
 		),
 
 	/*
@@ -137,6 +137,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+		'Jenssegers\Date\DateServiceProvider',
 
 	),
 

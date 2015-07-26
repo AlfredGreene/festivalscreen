@@ -15,10 +15,17 @@
 		<div class="reveal">
 
 			<div class="slides">
+				<section data-background="#FFFFFF"><img src="/assets/images/sponsors/obos.png" class="stretch" /></section>
+				<section data-background="#FFFFFF"><img src="/assets/images/sponsors/newwave.png" class="stretch" /></section>
+				<section data-background="#FFFFFF"><img src="/assets/images/sponsors/xlbygg.png" class="stretch" /></section>
+				<section data-background="#FFFFFF"><img src="/assets/images/sponsors/fb.png" class="stretch" /></section>
+				<section data-background="#FFFFFF"><img src="/assets/images/sponsors/samarbeidspartnere.png" class="stretch" /></section>
+				<section data-background="#FFFFFF"><img src="/assets/images/sponsors/partnere.png" class="stretch" /></section>
+				<section data-background="#FFFFFF"><img src="/assets/images/sponsors/stottespillere.png" class="stretch" /></section>
 				<section class="stage" data-background="/assets/images/stagebg.jpg" data-autoslide="4000"><h1><span>Program</span></section>
-				
 				<?php $earth = 0; ?>	
 				@foreach($locations as $name => $events)
+				<?php if(count($events) < 1) continue; ?>
 				<section class="stage" data-background="/assets/images/stagebg.jpg">
 					<!--<section data-autoslide="4000"><h1><span>Program</span> {{ $name }}</h1></section>-->
 					<section class="program" data-transition="zoom">
@@ -57,8 +64,8 @@
 						</ul>
 					</section>
 				</section>	
-				<?php if($earth < 10): for ($i=0; $i < 2; $i++): $earth++; if($earth > 10) continue; ?>
-					<section data-background="#19578e"><img src="/assets/images/earth/earth-{{ str_pad($earth+1, 2, '0', STR_PAD_LEFT) }}.jpg" class="stretch" /></section>
+				<?php if($earth < 10): for ($i=0; $i < 3; $i++): $earth++; if($earth >= 10) continue; ?>
+					<section data-background="#19578e"><img src="/assets/images/earth/earth-{{ str_pad($earth, 2, '0', STR_PAD_LEFT) }}.jpg" class="stretch" /></section>
 				<?php endfor; endif; ?>
 				@endforeach
 			</div>
