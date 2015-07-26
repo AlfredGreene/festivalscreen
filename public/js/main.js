@@ -70,10 +70,10 @@ $(function(){
         previewLinks: false,
 
         // Transition style
-        transition: 'concave', // none/fade/slide/convex/concave/zoom
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
 
         // Transition speed
-        transitionSpeed: 'default', // default/fast/slow
+        transitionSpeed: 'slow', // default/fast/slow
 
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
